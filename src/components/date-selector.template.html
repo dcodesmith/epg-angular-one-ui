@@ -1,0 +1,15 @@
+<div class="date-selector">
+  <ul class="date-selector__list" ng-style="{transform: 'translate3d(0, 0, 0)', '-webkit-transform': 'translate3d(0, 0, 0)'}">
+    <li ng-repeat="date in programmeDates" class="date-selector__list__item" ng-click="onSelect($index)" ng-class="{'date-selector__list__item--active': date === selectedDate}">
+      <button class="date">
+        <span>
+          {{date.date | date : 'EEEE' }}
+        </span>
+        <span>
+          {{date.date | date : 'd' | ordinalSuffix}}
+        </span>
+      </button>
+    </li>
+  </ul>
+  <span ng-style="{transform: 'translate3d(' + (itemWidth * currentIndex) + 'px, 0, 0)', '-webkit-transform': 'translate3d(' + (itemWidth * currentIndex) + 'px, 0, 0)'}" class="date-selector__list__item--underlined"/>
+</div>

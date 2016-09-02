@@ -1,0 +1,43 @@
+<div class="programme-guide">
+
+	<div class="programme-guide__header">
+
+		<div class="programme-guide__header__legend">
+			&nbsp;
+		</div>
+
+		<ul class="programme-guide__showtimes" ng-style="transformStyle">
+			<li class="programme-guide__showtimes__time" ng-repeat="time in times">
+        {{::time | trackTimeFormat}}
+			</li>
+		</ul>
+
+	</div>
+
+	<div class="programme-guide__body">
+		<div class="programme-guide__row" ng-repeat="channel in channels">
+
+			<div class="programme-guide__row__header">
+				<!-- {{::channel.name}} -->
+				<!-- {{channel.code | svgUrl}} -->
+				<!-- <svg-icon src="{{channel.code | svgUrl}}"></svg-icon> -->
+			</div>
+
+			<div class="programme-guide__row__items" ng-style="transformStyle" ng-class-odd="'odd'" ng-class-even="'even'">
+        <ul class="schedule">
+          <schedule-item ng-repeat="programme in programmes[channel.code]" item="programme"></schedule-item>
+        </ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="programme-guide__controls">
+		<button ng-disabled="!offset" class="previous" ng-click="navigate(-1)">
+      <svg-icon src="/images/arrow_left.svg"></svg-icon>
+		</button>
+		<button ng-disabled="offset >= lastOffset" class="next" ng-click="navigate(1)">
+      <svg-icon src="/images/arrow_right.svg"></svg-icon>
+		</button>
+	</div>
+
+</div>

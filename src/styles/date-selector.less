@@ -1,0 +1,62 @@
+.date-selector {
+  font-size: 1.1rem;
+
+  &__list {
+    background: lighten(#dfdfdf, 10%);
+    list-style: none;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.7s ease;
+    white-space: nowrap;
+
+    &__item {
+      display: inline-block;
+      position: relative;
+      text-align: center;
+
+      .date {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px 15px;
+        padding: 10px 15px;
+        text-transform: uppercase;
+        width: 150px;
+
+        span {
+          display: block;
+        }
+
+        &:hover {
+          background: lighten(#dfdfdf, 5%);
+        }
+
+        &:focus {
+          outline: 0;
+        }
+      }
+
+      &--active {
+        color: @brand-primary;
+
+        .date {
+          font-weight: 500;
+        }
+      }
+
+      &--underlined {
+        border: 2px solid @brand-primary;
+        display: block;
+        width: 150px;
+        transition: transform 0.5s ease;
+        margin-top: -4px;
+      	// width: 0;
+      	// height: 0;
+      	// border-left: 20px solid transparent;
+      	// border-right: 20px solid transparent;
+      	// border-top: 20px solid #f00;
+      }
+    }
+  }
+}

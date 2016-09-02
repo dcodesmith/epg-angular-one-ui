@@ -1,0 +1,29 @@
+.channel__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #efefef;
+  font-weight: 400;
+  font-size: 1.3rem;
+  width: 170px;
+  float: right;
+
+  &__item {
+    padding: 5px 0;
+
+    .channel {
+      &__name {
+        margin-right: 20px;
+        width: 81px;
+        display: inline-block;
+        text-align: right;
+      }
+
+      &__code {}
+    }
+    
+    &:nth-child(even) {
+      background: #efefef;
+    }
+  }
+}

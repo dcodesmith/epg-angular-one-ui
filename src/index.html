@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="app.css">
+    <title></title>
+</head>
+
+<body ng-app="app">
+
+    <div class="container" ng-controller="HomeController as home">
+
+        <div class="channel-panel col-xs-12 col-sm-6 col-lg-8">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="channel_name">Channel Name</label>
+                    <div class="col-sm-6">
+                        <input id="channel_name" type="text" name="name" placeholder="Enter channel name" ng-model="home.channelName" />
+                    </div>
+                    <div class="col-sm-3">
+                        <button type="button" name="button" class="btn btn-primary btn-large" ng-click="home.addChannel()" ng-disabled="home.channelName.length === 0">Add Channel</button>
+                    </div>
+                </div>
+
+                <!-- <div class="form-group">
+          <label class="col-sm-3 control-label" for="channel_selector">Select Channel</label>
+          <div class="col-sm-9">
+            <div class="select">
+              <select id="channel_selector" ng-model="home.programme.channel" ng-options="channel.id as channel.name for channel in home.channels">
+              </select>
+            </div>
+          </div>
+        </div> -->
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="file_selector">Choose CSV File</label>
+                    <div class="col-sm-9">
+                        <file-chooser>
+                            <file-chooser/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-1 col-sm-11">
+                        <button type="button" ng-click="home.onUpload()" class="submit-button btn btn-primary btn-large">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-lg-4">
+            <ul class="channel__list">
+                <li class="channel__list__item" ng-repeat="channel in home.channels">
+                    <span class="channel__name">{{::channel.name}}</span>
+                    <span class="channel__code">{{::channel.code}}<span>
+        </li>
+      </ul>
+    </div>
+
+    <section class="col-md-12">
+      <div class="grid">
+        <date-selector
+          ng-if="home.programmeDates.length"
+          programme-dates="home.programmeDates">
+        </date-selector>
+
+        <programme-guide
+          ng-if="home.todaysChannels.length"
+          channels="home.todaysChannels"
+          programmes="home.selectedDateProgrammes">
+        </programme-guide>
+      </div>
+    </section>
+    <code>
+      {{home.selectedDateProgrammes}}
+    </code>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

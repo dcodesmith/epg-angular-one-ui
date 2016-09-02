@@ -1,0 +1,45 @@
+{
+  "name": "miniapi-angular-one",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test karma start",
+    "start": "NODE_ENV=development node node_modules/.bin/webpack-dev-server --content-base app",
+    "build": "NODE_ENV=production node node_modules/.bin/webpack -p -d && cp app/index.html dist/index.html"
+  },
+  "author": "Afees Dammy Kolawole <dcodesmith@gmail.com> (http://www.dcodesmith.com)",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.4.9",
+    "angular-resource": "^1.4.9",
+    "bootstrap": "^3.3.6",
+    "lodash": "^4.0.0",
+    "moment": "^2.11.2"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.4.9",
+    "ng-annotate-loader": "^0.1.0",
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react-hmre": "^1.1.1",
+    "chai": "^3.4.1",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "karma": "^0.13.19",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-mocha": "^0.2.1",
+    "karma-webpack": "^1.7.0",
+    "less": "^2.6.0",
+    "less-loader": "^2.2.2",
+    "mocha": "^2.3.4",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.11",
+    "webpack-dev-server": "^1.14.1"
+  }
+}

@@ -1,0 +1,100 @@
+// Width variables (appears count calculates by raw css)
+@width0: 100%; // Appears 2 times
+
+// html {
+// 	box-sizing: border-box;
+// 	font-size: 14px;
+// }
+// * {
+// 	box-sizing: inherit;
+// 	&:before {
+// 		box-sizing: inherit;
+// 	}
+// 	&:after {
+// 		box-sizing: inherit;
+// 	}
+// }
+
+[type="text"],
+select {
+	background-color: @white;
+	border-radius: 2px;
+	border: 1px solid @color1;
+	color: @color0;
+	display: block;
+	padding: 8px 10px;
+	width: @width0;
+  background-color: @white;
+}
+
+.file-chooser {
+  input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+	.control-label {
+		padding-top: 5px;
+	}
+
+	svg {
+		margin-right: 5px;
+		width: 20px;
+		height: 17px;
+		cursor: pointer;
+	}
+}
+
+label {
+  font-weight: normal;
+}
+
+select {
+	appearance: none;
+	padding-bottom: 8px;
+	padding-right: 2em;
+	padding-top: 8px;
+}
+
+.select {
+	display: inline-block;
+	position: relative;
+	vertical-align: bottom;
+
+	&::before,
+  &:before {
+		transform: scale(0.84, 0.42);
+		bottom: 1px;
+		color: #82888a;
+		content: '\25bc';
+		line-height: 1;
+		padding-top: 0.7em;
+		pointer-events: none;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		top: 0;
+		transform: scale(0.84, 0.42);
+		width: 2em;
+	}
+}
+
+.btn {
+  border-radius: 1px;
+  border-color: lighten(@brand-primary, 0);
+
+  &:hover,
+  &:focus {
+    background-color: lighten(@brand-primary, 5%);
+    border-color: lighten(@brand-primary, 5%);
+  }
+}
+
+.grid {
+	margin: 60px auto;
+	border: 1px solid #efefef;
+}
