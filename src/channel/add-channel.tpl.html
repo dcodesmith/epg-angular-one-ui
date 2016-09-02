@@ -1,22 +1,22 @@
 <section>
-	<div class="">
-		<h1>Add Channel</h1>
-		<input type="text" name="name" placeholder="Enter channel name" ng-model="channel.name"/>
-		<button type="button" name="button" ng-click="channel.add()">Add Channel</button>
-	</div>
+  <div class="">
+    <h1>Add Channel</h1>
+    <input type="text" name="name" placeholder="Enter channel name" ng-model="channel.name"/>
+    <button type="button" name="button" ng-click="channel.add()">Add Channel</button>
+  </div>
 
-	<div class="">
-		<select ng-model="channel.selectedChannel"
-			ng-options="channel.id as channel.name for channel in channel.channels">
-		</select>
-	</div>
+  <div class="">
+    <select ng-model="channel.selectedChannel"
+      ng-options="channel.id as channel.name for channel in channel.channels">
+    </select>
+  </div>
 
   <div class="">
     <input type="file" class="file-upload" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
   </div>
 
   <div class="">
-    <button type="button" name="button" class="submit-button">Submit</button>    
+    <button type="button" name="button" class="submit-button">Submit</button>
   </div>
 
 </section>

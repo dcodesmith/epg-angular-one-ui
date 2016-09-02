@@ -3,25 +3,25 @@ import _ from 'lodash';
 
 export default function addChannel (ChannelService) {
 
-	function AddChannelController () {
+  function AddChannelController () {
     var vm = this;
-		vm.name = name;
+    vm.name = name;
     vm.channels = [];
     vm.selectedChannel = '';
 
     getAllChannel();
 
-		this.add = () => {
+    this.add = () => {
       const data = { name: this.name };
-			ChannelService
+      ChannelService
         .create(data)
-				.then(res => {
+        .then(res => {
           getAllChannel();
-					console.log('res', res);
-				}, err => {
-					console.log('err', err);
-				});
-		};
+          console.log('res', res);
+        }, err => {
+          console.log('err', err);
+        });
+    };
 
     function getAllChannel () {
       return ChannelService
@@ -32,20 +32,20 @@ export default function addChannel (ChannelService) {
           return vm.channels;
         });
     }
-	}
+  }
 
-	return {
-		restrict: 'E',
-		scope: {},
-		template: template,
-		replace: true,
-		controllerAs: 'channel',
-		controller: AddChannelController
-	}
+  return {
+    restrict: 'E',
+    scope: {},
+    template: template,
+    replace: true,
+    controllerAs: 'channel',
+    controller: AddChannelController
+  }
 }
 
 /*
 export default function (app) {
-	app.directive('addChannel', addChannel);
+  app.directive('addChannel', addChannel);
 };
 */
